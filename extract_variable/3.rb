@@ -7,11 +7,22 @@ def send_correct_page(browser, window)
 end
 
 def send_correct_page(browser, window)
-  user_browser_type = browser.type
-  user_window_size = window.size
-  if(user_browser_type == "Safari" && user_window_size < "768px")
-    return "You are using the Safari browser in a small window."
+  safari_browser = (browser.type == "Safari")
+  small_window = window.size < "768"
+  safari_small_window_message = "You are using the Safari browser in a small window."
+  other_browser_or_big_window_message = "You are not using the Safari browser or have a big window."
+
+  if safari_browser && small_window
+    return safari_small_window_message
   else
-    return "You are not using the Safari browser or have a big window."
+    return other_browser_or_big_window_message
   end
 end
+
+
+
+  
+  
+  
+  
+  
