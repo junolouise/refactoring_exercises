@@ -7,3 +7,20 @@ def send_correct_page(browser, window)
 
   browser_type_is_safari && window_size_is_small ? safari_small_message : not_safari_or_big_message
 end
+
+class tell_browser_Type
+
+  def is_safari
+    browser_type_is_safari = browser.type == "Safari"
+  end
+
+  def window_size
+    window_size_is_small = window.size < "768px"
+  end
+
+  def message
+    safari_small_message = "You are using the Safari browser in a small window."
+    not_safari_or_big_message = "You are not using the Safari browser or have a big window."
+    browser_type_is_safari && window_size_is_small ? safari_small_message : not_safari_or_big_message
+  end
+end
