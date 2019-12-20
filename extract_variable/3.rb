@@ -19,8 +19,6 @@ def send_correct_page(browser, window)
   end
 end
 
-
-
   
   
   
